@@ -1,2 +1,4 @@
 .terraform
 terraform-eks/.terraform.lock.hcl
+terraform-eks/terraform.tfstate
+terraform-eks/.terraform.tfstate.lock.info
