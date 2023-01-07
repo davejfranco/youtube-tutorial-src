@@ -1,0 +1,2 @@
+.terraform
+terraform-eks/.terraform.lock.hcl
