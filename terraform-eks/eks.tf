@@ -5,7 +5,6 @@ module "eks" {
   cluster_name    = "youtube-eks"
   cluster_version = "1.24"
 
-  create_kms_key                 = true
   cluster_endpoint_public_access = true
 
   cluster_addons = {
@@ -21,9 +20,9 @@ module "eks" {
   }
 
   vpc_id     = module.vpc.vpc_id
-  subnet_ids = module.vpc.public_subnets
+  subnet_ids = module.vpc.private_subnets
 
-  create_node_security_group = true
+
   eks_managed_node_groups = {
     public = {
       min_size     = 1
@@ -35,28 +34,37 @@ module "eks" {
     }
   }
 
-  # aws-auth configmap
-  create_aws_auth_configmap = true
-  manage_aws_auth_configmap = true
+  create_aws_auth_configmap = false
+  manage_aws_auth_configmap = false
 
-  #   aws_auth_roles = [
-  #     {
-  #       rolearn  = "arn:aws:iam::66666666666:role/role1"
-  #       username = "role1"
-  #       groups   = ["system:masters"]
-  #     },
-  #   ]
-
+  /*
   aws_auth_users = [
     {
       userarn  = data.aws_iam_user.me.arn
-      username = "dave"
+      username = "daveops"
       groups   = ["system:masters"]
     }
   ]
+  */
 
   tags = {
     Environment = "tutorial"
     Terraform   = "true"
   }
 }
+
+/*
+data "aws_eks_cluster" "eks" {
+  name = module.eks.cluster_name
+}
+
+data "aws_eks_cluster_auth" "eks" {
+  name = module.eks.cluster_name
+}
+
+provider "kubernetes" {
+  host                   = data.aws_eks_cluster.eks.endpoint
+  cluster_ca_certificate = base64decode(data.aws_eks_cluster.eks.certificate_authority.0.data)
+  token                  = data.aws_eks_cluster_auth.eks.token
+}
+*/
