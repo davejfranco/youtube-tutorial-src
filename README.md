@@ -19,3 +19,7 @@ tutoriales
 Cada subdirectorio es un tutorial que tiene los pasos que he seguido durante el video mas el enlace al video para que lo veas como lo he hecho.
 
 Si te gusta mi contenido, recuerda seguirme porque estoy creando esta comunidad hispano hablante sobre temas relacionados 
+
+## Tutoriales
+
+- Cluster EKS usando [eksctl](tutoriales/kubernetes/eksctl/TUTORIAL.md)

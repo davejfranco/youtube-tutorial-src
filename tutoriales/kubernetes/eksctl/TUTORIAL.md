@@ -84,7 +84,6 @@ metadata:
   version: '1.24'
 ```	
 
-este archivo esta adjunto en esta misma ruta.
 
 La seccion ```apiVersion``` y ```kind``` son obligatorias. La seccion ```metadata``` es la seccion que contiene la información del cluster. En este caso, el nombre del cluster es tutorial-eks, la región es us-east-1 y la versión es 1.24.
 
