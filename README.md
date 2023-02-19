@@ -23,3 +23,4 @@ Si te gusta mi contenido, recuerda seguirme porque estoy creando esta comunidad 
 ## Tutoriales
 
 - Cluster EKS usando [eksctl](tutoriales/kubernetes/eksctl/TUTORIAL.md)
+- Cluster EKS usando [terraform](tutoriales/terraform/eks/TUTORIAL.md)

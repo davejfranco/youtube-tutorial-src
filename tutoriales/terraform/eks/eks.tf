@@ -34,10 +34,9 @@ module "eks" {
     }
   }
 
-  create_aws_auth_configmap = false
-  manage_aws_auth_configmap = false
+  create_aws_auth_configmap = true
+  manage_aws_auth_configmap = true
 
-  /*
   aws_auth_users = [
     {
       userarn  = data.aws_iam_user.me.arn
@@ -45,7 +44,6 @@ module "eks" {
       groups   = ["system:masters"]
     }
   ]
-  */
 
   tags = {
     Environment = "tutorial"
