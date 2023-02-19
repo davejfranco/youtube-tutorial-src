@@ -1,5 +1,6 @@
 .terraform
-terraform/eks/.terraform.lock.hcl
-terraform/eks/terraform.tfstate
-terraform/eks/.terraform.tfstate.lock.info
-terraform/eks/terraform.tfstate.backup
+tutoriales/terraform/eks/.terraform.lock.hcl
+tutoriales/terraform/eks/terraform.tfstate
+tutoriales/terraform/eks/.terraform.tfstate.lock.info
+tutoriales/terraform/eks/terraform.tfstate.backup
+
