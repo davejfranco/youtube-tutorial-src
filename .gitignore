@@ -5,3 +5,6 @@ tutoriales/terraform/eks/.terraform.tfstate.lock.info
 tutoriales/terraform/eks/terraform.tfstate.backup
 
 .vscode/settings.json
+
+#Node modules
+node_modules

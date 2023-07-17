@@ -1,0 +1,4 @@
+DB_HOST=db
+DB_USER=appuser
+DB_PASSWORD=cambiamePorfavor!
+DB_NAME=sampledb
