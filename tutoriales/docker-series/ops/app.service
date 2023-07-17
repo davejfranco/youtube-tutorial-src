@@ -1,0 +1,15 @@
+[Unit]
+Description=Sample App
+Documentation=https://www.sample.com
+
+[Service]
+ExecStart=npx ts-node app.ts
+WorkingDirectory=/home/vagrant/app
+Restart=always
+User=vagrant
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+# Optionally, you can specify additional environment variables here
+
+[Install]
+WantedBy=multi-user.target
