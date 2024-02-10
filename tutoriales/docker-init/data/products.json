@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "name": "Graphics Card",
+        "price": 350.25 
+    },
+    {
+        "id": 2,
+        "name": "Motherboard",
+        "price": 100 
+    },
+    {
+        "id": 3,
+        "name": "RAM memory",
+        "price": 30.5 
+    },
+    {
+        "id": 4,
+        "name": "SSD Storage",
+        "price": 120 
+    },
+    {
+        "id": 5,
+        "name": "Power Supply",
+        "price": 140.99 
+    },
+    {
+        "id": 6,
+        "name": "CPU",
+        "price": 500 
+    },
+    {
+        "id": 7,
+        "name": "CPU FAN",
+        "price": 50.25 
+    },
+    {
+        "id": 8,
+        "name": "Keyboard",
+        "price": 60.10 
+    },
+    {
+        "id": 9,
+        "name": "Mouse",
+        "price": 35 
+    },
+    {
+        "id": 10,
+        "name": "PC Case",
+        "price": 100.99 
+    }
+]
