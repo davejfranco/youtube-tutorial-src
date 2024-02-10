@@ -1,9 +1,22 @@
+#terraform 
 .terraform
 tutoriales/terraform/eks/.terraform.lock.hcl
 tutoriales/terraform/eks/terraform.tfstate
 tutoriales/terraform/eks/.terraform.tfstate.lock.info
 tutoriales/terraform/eks/terraform.tfstate.backup
 
+tutoriales/terraform/iam/.terraform.lock.hcl
+tutoriales/terraform/iam/terraform.tfstate
+tutoriales/terraform/iam/.terraform.tfstate.lock.info
+tutoriales/terraform/iam/terraform.tfstate.backup
+
+#docker
+tutoriales/docker-init/.env
+tutoriales/docker-init/app/__pycache__/
+tutoriales/docker-init/app/db/__pycache__/
+tutoriales/docker-init/app/api/__pycache__/
+
+#vscode
 .vscode/settings.json
 
 #Node modules
