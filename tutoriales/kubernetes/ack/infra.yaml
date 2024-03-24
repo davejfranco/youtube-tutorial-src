@@ -1,0 +1,36 @@
+---
+apiVersion: ec2.services.k8s.aws/v1alpha1
+kind: SecurityGroup
+metadata:
+  name: ack-demo-security-group
+spec:
+  name: ack-demo-sg
+  description: ack demo security SecurityGroup
+  vpcID: vpc-0de6dcebcb1d1e89e
+  ingressRules:
+    - ipProtocol: tcp
+      fromPort: 22
+      toPort: 22
+      ipRanges:
+        - cidrIP: "0.0.0.0/0"
+          description: "SSH from anywhere"
+  egressRules:
+    - ipProtocol: All
+      fromPort: 0
+      toPort: 0
+      ipRanges:
+        - cidrIP: "0.0.0.0/0"
+          description: "All outbound traffic allowed"
+
+---
+apiVersion: ec2.services.k8s.aws/v1alpha1
+kind: Instance
+metadata:
+  name: ack-demo-ec2
+spec:
+  instanceType: t2.nano
+  imageID: ami-0c101f26f147fa7fd
+  subnetID: subnet-060ff58f504f124dd
+  securityGroupsIDs:
+    - sg-0d1d0a9b0948b43c0
+  

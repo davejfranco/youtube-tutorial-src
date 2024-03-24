@@ -23,7 +23,7 @@ vpc:
 managedNodeGroups:
   - name: managed-ng-1
     instanceType: t3.small
-    privateNetworking: true
+    privateNetworking: false
     minSize: 1
     maxSize: 2
     desiredCapacity: 1
