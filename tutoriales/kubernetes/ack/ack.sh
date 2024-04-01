@@ -31,8 +31,7 @@ add_iam_role() {
 
   ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
   ACK_SERVICE_ACCOUNT_NAME="ack-$SERVICE-controller"
-    
-    read -r -d '' TRUST_RELATIONSHIP <<EOF
+  TRUST_RELATIONSHIP=$(cat <<EOF  
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -51,7 +50,8 @@ add_iam_role() {
   ]
 }
 EOF
-echo "${TRUST_RELATIONSHIP}" > trust.json
+  )
+  echo "${TRUST_RELATIONSHIP}" > trust.json
   
   ACK_CONTROLLER_IAM_ROLE="ack-$SERVICE-controller-role"
   ACK_CONTROLLER_IAM_ROLE_DESCRIPTION="IAM role for ACK service account $ACK_SERVICE_ACCOUNT_NAME"

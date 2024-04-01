@@ -1,0 +1,14 @@
+---
+apiVersion: ec2.services.k8s.aws/v1alpha1
+kind: Instance
+metadata:
+  name: ack-demo-ec2
+spec:
+  instanceType: t2.nano
+  imageID: ami-0c101f26f147fa7fd
+  subnetID: subnet-060ff58f504f124dd
+  tags:
+    - key: Name 
+      value: ack-demo-ec2 
+  
+  

@@ -21,16 +21,6 @@ spec:
       ipRanges:
         - cidrIP: "0.0.0.0/0"
           description: "All outbound traffic allowed"
-
----
-apiVersion: ec2.services.k8s.aws/v1alpha1
-kind: Instance
-metadata:
-  name: ack-demo-ec2
-spec:
-  instanceType: t2.nano
-  imageID: ami-0c101f26f147fa7fd
-  subnetID: subnet-060ff58f504f124dd
-  securityGroupsIDs:
-    - sg-0d1d0a9b0948b43c0
-  
+  tags:
+    - key: Name 
+      value: ack-demo-sg 
