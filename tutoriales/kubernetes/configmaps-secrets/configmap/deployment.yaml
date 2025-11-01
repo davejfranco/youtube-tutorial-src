@@ -1,0 +1,54 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  labels:
+    app: web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.25-alpine
+          ports:
+            - containerPort: 80
+          env:
+            - name: VERSION
+              valueFrom:
+                configMapKeyRef:
+                  name: web-nginx-conf
+                  key: app_version
+            - name: SERVICE_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: web-nginx-conf
+                  key: app_name
+          volumeMounts:
+            - name: nginx-conf
+              mountPath: /etc/nginx/nginx.conf
+              subPath: nginx.conf
+      volumes:
+        - name: nginx-conf
+          configMap:
+            name: web-nginx-conf
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+spec:
+  selector:
+    app: web
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+

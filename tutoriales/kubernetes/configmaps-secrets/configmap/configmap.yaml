@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-nginx-conf
+  namespace: default
+data:
+  app_version: "v1"
+  app_name: "Sample APP"
+  nginx.conf: |
+    user  nginx;
+    worker_processes  1;
+
+    events { worker_connections 1024; }
+
+    http {
+      server {
+        listen 80;
+        location / {
+          return 200 "Hello from nginx Sample app\n";
+        }
+      }
+    }
